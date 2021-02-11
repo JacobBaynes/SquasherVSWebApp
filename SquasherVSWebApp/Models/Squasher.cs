@@ -5,13 +5,11 @@ using System.Threading.Tasks;
 
 namespace SquasherVSWebApp.Models
 {
-    public class Bug
+    public class Squasher
     {
         public int ID { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Severity { get; set; }
-        public ICollection<ProjectBugAssignment> ProjectBugAssignments { get; set; }
+        public string Name { get; set; }
+        public ICollection<ProjectSquasherAssignment> ProjectSquasherAssignments { get; set; }
         public ICollection<SquasherBugAssignment> SquasherBugAssignments { get; set; }
 
     }
