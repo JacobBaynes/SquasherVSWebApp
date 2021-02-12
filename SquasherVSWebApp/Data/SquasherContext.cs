@@ -16,5 +16,15 @@ namespace SquasherVSWebApp.Data
         public DbSet<ProjectSquasherAssignment> ProjectSquasherAssignments { get; set; }
         public DbSet<SquasherBugAssignment> SquasherBugAssignments { get; set; }
 
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Bug>().ToTable("Bug");
+            modelBuilder.Entity<Project>().ToTable("Project");
+            modelBuilder.Entity<Squasher>().ToTable("Squasher");
+            modelBuilder.Entity<ProjectBugAssignment>().ToTable("ProjectBugAssignment");
+            modelBuilder.Entity<ProjectSquasherAssignment>().ToTable("ProjectSquasherAssignment");
+            modelBuilder.Entity<SquasherBugAssignment>().ToTable("SquasherBugAssignment");
+        }
     }
 }
